@@ -1,0 +1,28 @@
+====AGLT2==== CPU_load
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2/pp
+====AGLT2==== CPU_utilization
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2/pp
+====AGLT2==== Disk_IO_SUMMARY
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2/pp
+====AGLT2==== Memory
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2/pp
+====AGLT2_CHI==== input
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2_CHI
+====AGLT2_CHI==== output
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/AGLT2_CHI
+====RBIN==== GBIn
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1908/Raw/RBIN
+Traceback (most recent call last):
+  File "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/dict_maker.py", line 42, in <module>
+    metrics = RBIN("{}".format(rbin[k]))
+  File "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/extract_dict.py", line 146, in RBIN
+    result = pd.concat(dataframes, ignore_index=True)
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/reshape/concat.py", line 284, in concat
+    sort=sort,
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/reshape/concat.py", line 331, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate

@@ -1,0 +1,21 @@
+====AGLT2==== CPU_load
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2/pp
+====AGLT2==== CPU_utilization
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2/pp
+====AGLT2==== Disk_IO_SUMMARY
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2/pp
+====AGLT2==== Memory
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0936/Raw/AGLT2/pp
+====AGLT2_CHI==== input
+Traceback (most recent call last):
+  File "/afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/dict_maker.py", line 34, in <module>
+    dfmin, dfmax, dfmean, dfstd = AGLT2CHI("{}".format(aglt2chi[j]))
+  File "/afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/extract_dict.py", line 83, in AGLT2CHI
+    aglt2chipath = os.environ["aglt2chi"]
+  File "/usr/lib64/python3.6/os.py", line 669, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'aglt2chi'

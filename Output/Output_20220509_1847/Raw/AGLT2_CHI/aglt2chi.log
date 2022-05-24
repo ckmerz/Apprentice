@@ -1,0 +1,121 @@
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI
+===line=== 620d46c684eff80106ffc4b5769f77e9f658cc7c3ee3cd847261da09570167f3
+Request is good
+et-1/0/1
+sw2.star.omnipop.btaa.org
+                   0
+Input min   0.448850
+      max   0.826085
+      mean  0.604628
+      std   0.155718
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_input_0.csv
+                    0
+Output min   0.490603
+       max   1.068874
+       mean  0.627964
+       std   0.247761
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_output_0.csv
+===line=== 696e977330667f44c13ffe5364446c96a2fa4cc9137b9e5ddbd23605bf489e12
+Request is good
+et-0/0/0
+sw2.star.omnipop.btaa.org
+                   0
+Input min   0.028243
+      max   0.154212
+      mean  0.057627
+      std   0.054146
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_input_1.csv
+                    0
+Output min   0.113348
+       max   0.150793
+       mean  0.131924
+       std   0.016286
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_output_1.csv
+===line=== fa5373adef061fa051ef458a8e028a84749385edb16955537eac43712b6ef72b
+Request is good
+et-1/0/0
+sw2.star.omnipop.btaa.org
+                   0
+Input min   0.033528
+      max   0.179166
+      mean  0.063702
+      std   0.064559
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_input_2.csv
+                    0
+Output min   0.091994
+       max   0.112047
+       mean  0.103153
+       std   0.008070
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_output_2.csv
+===line=== 939820268eaf905fae19a951a9bd73af2834017d0d2744229d71608b47afdf1c
+Request is good
+et-0/1/0
+sw2.star.omnipop.btaa.org
+                   0
+Input min   2.042426
+      max   4.510580
+      mean  3.390040
+      std   1.071430
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_input_3.csv
+                    0
+Output min   0.134600
+       max   0.344035
+       mean  0.217552
+       std   0.086011
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_output_3.csv
+===line=== d3947c64aa4ebd202cff06fb9c5e6badf51296db72ab3ba8ff01f35811d423ae
+Request is good
+et-0/1/0
+sw2.600wchicag.omnipop.btaa.org
+                   0
+Input min   4.018561
+      max   5.600924
+      mean  4.870112
+      std   0.659516
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_input_4.csv
+                    0
+Output min   1.410169
+       max   3.621173
+       mean  2.583643
+       std   0.922330
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_output_4.csv
+===line=== 1dd502cdcfac422ff031a6f097ef8385c7b4078b4a4b19081bb39c0dd86ddae7
+Request is good
+et-1/0/2
+sw2.600wchicag.omnipop.btaa.org
+                   0
+Input min   4.847082
+      max   5.351723
+      mean  5.135808
+      std   0.229716
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_input_5.csv
+                    0
+Output min   1.512952
+       max   3.448198
+       mean  2.596445
+       std   0.853754
+Path and file exists /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1847/Raw/AGLT2_CHI/AGLT2_CHI_output_5.csv

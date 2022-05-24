@@ -1,0 +1,14 @@
+====AGLT2==== CPU_load
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2/pp
+====AGLT2==== CPU_utilization
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2/pp
+====AGLT2==== Disk_IO_SUMMARY
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2/pp
+====AGLT2==== Memory
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Raw/AGLT2/pp
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Time
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220512_0951/Dict

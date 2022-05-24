@@ -1,0 +1,27 @@
+===line=== et-8/0/0
+The request is good
+Traceback (most recent call last):
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/indexing.py", line 1469, in _get_list_axis
+    return self.obj._take_with_is_copy(key, axis=axis)
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/series.py", line 847, in _take_with_is_copy
+    return self.take(indices=indices, axis=axis)
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/series.py", line 832, in take
+    new_index = self.index.take(indices)
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 712, in take
+    na_value=self._na_value,
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 742, in _assert_take_fillable
+    taken = values.take(indices)
+IndexError: cannot do a non-empty take from an empty axes.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/RBIN_ind.py", line 58, in <module>
+    starttime = df["portmfs/Timestamp"].iloc[[0]]
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/indexing.py", line 879, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/indexing.py", line 1487, in _getitem_axis
+    return self._get_list_axis(key, axis=axis)
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/indexing.py", line 1472, in _get_list_axis
+    raise IndexError("positional indexers are out-of-bounds") from err
+IndexError: positional indexers are out-of-bounds

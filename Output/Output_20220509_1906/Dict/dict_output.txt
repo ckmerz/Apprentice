@@ -1,0 +1,20 @@
+====AGLT2==== CPU_load
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2/pp
+====AGLT2==== CPU_utilization
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2/pp
+====AGLT2==== Disk_IO_SUMMARY
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2/pp
+====AGLT2==== Memory
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2/pp
+====AGLT2_CHI==== input
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2_CHI
+====AGLT2_CHI==== output
+Path exists:  /NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1906/Raw/AGLT2_CHI
+Traceback (most recent call last):
+  File "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/dict_maker.py", line 42, in <module>
+    for k in range(len(rbin)):
+NameError: name 'rbin' is not defined

@@ -1,0 +1,121 @@
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/generic.py:3889: PerformanceWarning: dropping on a non-lexsorted multi-index without a level parameter may impact performance.
+  obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI
+===line=== 620d46c684eff80106ffc4b5769f77e9f658cc7c3ee3cd847261da09570167f3
+Request is good
+et-1/0/1
+sw2.star.omnipop.btaa.org
+                   0
+Input min   1.291824
+      max   1.407861
+      mean  1.348321
+      std   0.042381
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_input_0.csv
+                    0
+Output min   0.579710
+       max   0.736760
+       mean  0.642695
+       std   0.065298
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_output_0.csv
+===line=== 696e977330667f44c13ffe5364446c96a2fa4cc9137b9e5ddbd23605bf489e12
+Request is good
+et-0/0/0
+sw2.star.omnipop.btaa.org
+                   0
+Input min   0.045604
+      max   0.054482
+      mean  0.048113
+      std   0.003663
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_input_1.csv
+                    0
+Output min   0.102412
+       max   0.114766
+       mean  0.107321
+       std   0.006363
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_output_1.csv
+===line=== fa5373adef061fa051ef458a8e028a84749385edb16955537eac43712b6ef72b
+Request is good
+et-1/0/0
+sw2.star.omnipop.btaa.org
+                   0
+Input min   0.045770
+      max   0.052877
+      mean  0.049519
+      std   0.003507
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_input_2.csv
+                    0
+Output min   0.122850
+       max   0.175564
+       mean  0.145219
+       std   0.023353
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_output_2.csv
+===line=== 939820268eaf905fae19a951a9bd73af2834017d0d2744229d71608b47afdf1c
+Request is good
+et-0/1/0
+sw2.star.omnipop.btaa.org
+                   0
+Input min   0.238737
+      max   0.372235
+      mean  0.301030
+      std   0.055248
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_input_3.csv
+                    0
+Output min   0.555991
+       max   0.660645
+       mean  0.611017
+       std   0.038379
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_output_3.csv
+===line=== d3947c64aa4ebd202cff06fb9c5e6badf51296db72ab3ba8ff01f35811d423ae
+Request is good
+et-0/1/0
+sw2.600wchicag.omnipop.btaa.org
+                   0
+Input min   0.439422
+      max   2.332206
+      mean  1.302869
+      std   0.900934
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_input_4.csv
+                    0
+Output min   1.352935
+       max   1.972521
+       mean  1.644291
+       std   0.240971
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_output_4.csv
+===line=== 1dd502cdcfac422ff031a6f097ef8385c7b4078b4a4b19081bb39c0dd86ddae7
+Request is good
+et-1/0/2
+sw2.600wchicag.omnipop.btaa.org
+                   0
+Input min   0.519328
+      max   3.386843
+      mean  1.791816
+      std   1.335011
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_input_5.csv
+                    0
+Output min   1.507751
+       max   1.709768
+       mean  1.579684
+       std   0.078851
+Path and file exists /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2_CHI/AGLT2_CHI_output_5.csv

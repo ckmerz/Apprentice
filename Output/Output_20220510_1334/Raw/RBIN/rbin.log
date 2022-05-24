@@ -1,0 +1,14 @@
+===line=== et-8/0/0
+The request is good
+"ID","portmfs/Timestamp","portmfs/im_BitsIn","portmfs/im_BitsOut","portmfs/im_BitsPerSecondIn","portmfs/im_BitsPerSecondOut","portmfs/im_UtilizationIn","portmfs/im_UtilizationOut"
+
+===line=== et-4/3/0
+The request is good
+"ID","portmfs/Timestamp","portmfs/im_BitsIn","portmfs/im_BitsOut","portmfs/im_BitsPerSecondIn","portmfs/im_BitsPerSecondOut","portmfs/im_UtilizationIn","portmfs/im_UtilizationOut"
+972371,1652203800,1.754782011264E12,3.419250066416E12,5.84927337088E9,1.13975002213867E10,5.84927337088,11.3975002213867
+
+===line=== et-8/2/0
+Traceback (most recent call last):
+  File "/afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/RBIN_ind.py", line 45, in <module>
+    time.sleep(240)
+KeyboardInterrupt

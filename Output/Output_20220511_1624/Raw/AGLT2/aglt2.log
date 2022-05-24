@@ -1,0 +1,7 @@
+Killed by signal 1.
+start orig:  2022-05-11 16:19:54.804405   start rounded:  2022-05-11 16:15:00   start unix:  1652300100
+end orig:  2022-05-11 16:24:54.804405   end rounded:  2022-05-11 16:20:00   end unix:  1652300400
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220511_1624/Time
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220511_1624/Raw/AGLT2/livestatus
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220511_1624/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220511_1624/Raw/AGLT2/pp

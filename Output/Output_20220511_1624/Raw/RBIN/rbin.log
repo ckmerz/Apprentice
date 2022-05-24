@@ -1,0 +1,15 @@
+===line=== et-8/0/0
+The request is good
+"ID","portmfs/Timestamp","portmfs/im_BitsIn","portmfs/im_BitsOut","portmfs/im_BitsPerSecondIn","portmfs/im_BitsPerSecondOut","portmfs/im_UtilizationIn","portmfs/im_UtilizationOut"
+966818,,,,,,,
+
+===line=== et-4/3/0
+The request is good
+"ID","portmfs/Timestamp","portmfs/im_BitsIn","portmfs/im_BitsOut","portmfs/im_BitsPerSecondIn","portmfs/im_BitsPerSecondOut","portmfs/im_UtilizationIn","portmfs/im_UtilizationOut"
+972371,,,,,,,
+
+===line=== et-8/2/0
+The request is good
+"ID","portmfs/Timestamp","portmfs/im_BitsIn","portmfs/im_BitsOut","portmfs/im_BitsPerSecondIn","portmfs/im_BitsPerSecondOut","portmfs/im_UtilizationIn","portmfs/im_UtilizationOut"
+966820,1652300700,4.6644168E7,8.48414168E8,155480.56,2828047.22666667,3.887014E-4,0.00707011806666667
+

@@ -1,0 +1,13 @@
+====AGLT2==== CPU_load
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2
+Path exists:  /afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220510_1359/Raw/AGLT2/pp
+Traceback (most recent call last):
+  File "/afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/dict_maker.py", line 26, in <module>
+    dfmin, dfmax, dfmean, dfstd = AGLT2("{}".format(aglt2[i]))
+  File "/afs/atlas.umich.edu/home/ckmerz/IndEnv/EnvironmentMonitoring/Scripts/newAGLT2/extract_dict.py", line 40, in AGLT2
+    result = pd.concat(dataframes, ignore_index=True)
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/reshape/concat.py", line 284, in concat
+    sort=sort,
+  File "/lustre/umt3/user/guhitj/Gitlab/netbasilisk/XRootD/AGLT2/Scripts/IndEnv/env/lib64/python3.6/site-packages/pandas/core/reshape/concat.py", line 331, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
