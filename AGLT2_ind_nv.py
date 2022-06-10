@@ -27,6 +27,8 @@ print("start orig: ", current_5, " ", "start rounded: ", start, " ", "start unix
 print("end orig: ", current, " ", "end rounded: ", end, " ", "end unix: ", end_final)
 
 timepath = os.environ["time"]
+#timepath = os.environ['timepath'] = 'time'
+
 if os.path.isdir(timepath):
 	print("Path exists: ", timepath)
 else: 
