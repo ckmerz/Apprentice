@@ -1,40 +1,51 @@
 #!/usr/bin/env python
-"""First version of the full script. 
+"""First version of the full python script. 
 Started w/ nv.py as base, added parts from CHI, RBIN, extract, dict_maker, & Timing.
-Not adding removechar.sh & newlivestatus.sh because they're shell scripts!"""
+Added removechar.sh & newlivestatus.sh to IndEnv.sh."""
 import json
 import requests
 import os
 import time
 import datetime as dt
-from datetime import datetime, timedelta #from extract & Timing
+
+from datetime import datetime, timedelta #from extract (ext) & Timing
 import pandas as pd
-import numpy as np
+#import numpy as np. Only used once in a commented out line of Chicago section 
 from requests.exceptions import Timeout
 import subprocess 
 """Needed ^ cuz not adding the scripts this effects. 
-They're shell scripts & don't play nice in the python env"""
-from multiprocessing import Process 
+They're bash & don't play nice in the python env"""
+#Don't need ^, won't use these bash scripts here because they're inside IndEnv now
+
+#from multiprocessing import Process 
+#Never used? 
 import re #from CHI
 import csv #from RBIN
 import io #RBIN
-import matplotlib.dates as md #from extract
-import matplotlib.pyplot as plt #extract
+import matplotlib.dates as md #from ext
+import matplotlib.pyplot as plt #ext
 import itertools #ext
 import glob #ext
 
 ######==Timing.py==######
 #Added instead of importing roundups & rounddos 
+"""
 def roundups(dt):
     roundup = dt + (datetime.min - dt) % timedelta(minutes=5)
     return roundup
-
+	#What's this for? Not used anywhere else & commenting it out doesn't change anything
+"""
 def rounddos(dt):
     rounddo = dt - (dt - datetime.min) % timedelta(minutes=5)
     return rounddo 
 ######==Timing.py==######
 
-current = datetime.datetime.now()
+current = datetime.datetime.now(dt)
+#def current_time(dt):
+#   current = datetime.datetime.now(dt)
+#   return current
+#current = current_time(dt)
+
 current_5 = current - datetime.timedelta(minutes=5)
 start = rounddos(current_5)
 start_final = time.mktime(start.timetuple())
@@ -45,13 +56,20 @@ end_final = int(end_final)
 """end_unix, end_datetime = Round(current) 
 start_unix, start_datetime = Round(current_5) 
 Both ^ commented out in CHI. Next 2 'print' lines in CHI & nv.py, but nv.py seems to work
-fine w/ out the unix lines so I don't think they're needed at all. Kept just in case."""
+fine w/ out the unix lines so I don't think they're needed anywhere. Kept just in case."""
 
-######==CHECK 1==###### nv.py base
+######==AGLT2==###### nv.py as base
 print("start orig: ", current_5, " ", "start rounded: ", start, " ", "start unix: ", start_final)
 print("end orig: ", current, " ", "end rounded: ", end, " ", "end unix: ", end_final)
 
+#default_timepath = "timething"
+#timepath = os.environ.get["time", default_timepath]
+
+#Did this way because 
 timepath = os.environ["time"]
+#Old version ^
+#timepath = os.environ['timepath'] = 'time'
+ 
 if os.path.isdir(timepath):
 	print("Path exists: ", timepath)
 else: 
@@ -62,7 +80,7 @@ with open(os.path.join(timepath, "Timing.txt"), "w" ) as f:
 	f.write("\n")
 	f.write(str(end_final))
 	lines = f.read() #added from very similar section in dict_maker. 
-	#Needed 4 'lines' var there
+	#Needed for 'lines' var there
 	
 checkmkpath = os.environ["checkmkls"]
 if os.path.isdir(checkmkpath):
@@ -75,8 +93,9 @@ if os.path.isdir(aglt2path):
 	print("Path exists: ", aglt2path)
 else:
 	print("Path does not exist")
-Don't need ^, exact same chunk defined in extract_dict section 
 """	
+#Don't need here, used later
+
 pppath = os.environ["pp"]
 if os.path.isdir(pppath):
 	print("Path exists: ", pppath)
@@ -85,6 +104,8 @@ else:
 #Also defined in extract_dict, but needed here in "def preprocess_df" section a few chunks down
 	
 #subprocesses bash-python
+#Don't need, not calling these files anymore, they're inside IndEnv.sh now
+#"""
 first = subprocess.Popen(['/bin/echo', str(start_final), str(end_final), str(checkmkpath)], stdout=subprocess.PIPE)
 second = subprocess.Popen(['bash', 'newlivestatus.sh', '{}'.format(start_final), '{}'.format(end_final), '{}'.format(checkmkpath)], stdin=first.stdout)
 first.stdout.close()
@@ -96,6 +117,7 @@ fourth = subprocess.Popen(['bash', 'removechar.sh', '{}'.format(checkmkpath)], s
 third.stdout.close()
 output1 = fourth.communicate()[0]
 third.wait()
+#"""
 
 #save metrics to min, max, mean, std
 data = pd.read_csv(os.path.join(checkmkpath,'livestatus_pp.txt'), header=None)
@@ -127,6 +149,63 @@ preprocess_df(data_util, "CPU_utilization")
 preprocess_df(data_DIO, "Disk_IO_SUMMARY")
 preprocess_df(data_mem, "Memory")
 
+#Below from extract_dict section, move to here? 
+"""
+def AGLT2(metadata):
+	metadata = str(metadata)
+	#outpath = "../Output/Raw/AGLT2"
+	#Want to change to: outpath = "../Output/Raw/AGLT2/checkmk
+	#outpath = "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1707/Raw/AGLT2/pp"
+	#Old ^
+	aglt2path = os.environ["aglt2"]
+	pppath = os.environ["pp"]
+
+	if os.path.isdir(aglt2path):
+		print("Path exists: ", aglt2path)
+	else:
+		print("Path does not exist")
+	
+	if os.path.isdir(pppath):
+		print("Path exists: ", pppath)
+	else:
+		print("Path does not exist")
+	#Used in "Def_preprocess df". Also needed for section below, merge at some point? 
+
+	csvfiles = glob.glob(os.path.join(pppath, 'AGLT2_{}_*.csv'.format(metadata)))
+	csvfiles = sorted(csvfiles)
+	#print("Check the order of the files")
+	#print(csvfiles)
+	dataframes = []
+	for files in csvfiles: 
+		#print(files)
+		df = pd.read_csv(files)
+		dataframes.append(df)
+
+	result = pd.concat(dataframes, ignore_index=True)
+	DATA = pd.DataFrame(data = result)
+	DATA = DATA.round(4)
+	#print(DATA)
+	df_min = DATA[DATA.index % 4 == 0].copy(deep=True)
+	df_max = DATA[DATA.index % 4 == 1].copy(deep=True)
+	df_mean = DATA[DATA.index % 4 == 2].copy(deep=True)
+	df_std = DATA[DATA.index % 4 == 3].copy(deep=True)
+	
+	def transpose(dataframe):
+		df = dataframe.T
+		df.columns = ['umfs06', 'umfs09', 'umfs11', 'umfs16', 'umfs19', 'umfs20', 'umfs21', 'umfs22', 'umfs23', 'umfs24', 'umfs25', 'umfs26', 'umfs27', 'umfs28', 'umfs29', 'umfs30', 'umfs31', 'umfs32', 'umfs33', 'umfs34']
+		df.drop(['Unnamed: 0'], axis = 0, inplace=True)
+		#print(df.columns)
+		df = dataframe.drop(['Unnamed: 0'], axis = 1)
+		df['Servers'] = ['umfs06', 'umfs09', 'umfs11', 'umfs16', 'umfs19', 'umfs20', 'umfs21', 'umfs22', 'umfs23', 'umfs24', 'umfs25', 'umfs26', 'umfs27', 'umfs28', 'umfs29', 'umfs30', 'umfs31', 'umfs32', 'umfs33', 'umfs34']
+		df = pd.Series(df['srv'].values,index=df.Servers).to_dict()
+		return df
+	dfmin = transpose(df_min)
+	dfmax = transpose(df_max)
+	dfmean = transpose(df_mean)
+	dfstd = transpose(df_std)
+	#print(dfmin)
+	return dfmin, dfmax, dfmean, dfstd
+"""
 
 ######==Chicago==###### only the unique parts, there's overlap w/ nv.py
 url = "https://grafana.omnipop.btaa.org/grafana/api/datasources/proxy/115/query.cgi"
@@ -231,21 +310,17 @@ for index, line in enumerate(identifier):
 	#Commented out all of the CHI section for now 
 
 ######==RBIN==###### only unique parts
-
 url = "http://capm-da-asb.umnet.umich.edu:8581/odata/api/interfaces" 
 hosts = ['ae5', 'ae6', 'et-8/2/1']
-#For the 4 router connections: hosts = ['1/51', '1/52']
-#There's 2 of each of these for the routers, how to specify this in the code? 
-
-
 #hosts = ['et-4/3/0', 'et-8/0/0', 'et-8/2/0']
 #Wrong ports ^, this is the old list
 
-"""if os.path.isdir(rbinpath):
+rbinpath = os.environ["rbin"]
+if os.path.isdir(rbinpath):
 	print("Path exists: ", rbinpath)
 else: 
 	print("Path does not exist")
-Chunk ^ commented out in CHI because it's defined in extract_dict instead"""
+#Commented out because it's defined in extract_dict instead
 
 for index, line in enumerate(hosts):
 	print("===line===", line)
@@ -266,6 +341,45 @@ for index, line in enumerate(hosts):
 		print("The request is good")
 	todos = response.text
 	print(todos)
+
+#Everything below (except commented part) came from extract_dict
+#Needed for dict_maker section
+def RBIN(metadata):
+	metadata = str(metadata)
+	#outpath = "../Output/Raw/RBIN"
+	rbinpath = os.environ["rbin"]
+	if os.path.isdir(rbinpath):
+		print("Path exists: ", rbinpath)
+	else:
+		print("Path does not exist")
+	csvfiles = glob.glob(os.path.join(rbinpath, 'RBIN_{}_*.csv'.format(metadata)))
+	csvfiles = sorted(csvfiles)
+	#print("Check the order of the files")
+	#print(csvfiles)
+	dataframes = []
+	for files in csvfiles:
+		df = pd.read_csv(files)
+		dataframes.append(df)
+
+	result = pd.concat(dataframes, ignore_index=True)
+	DATA = pd.DataFrame(data = result)
+	DATA = DATA.round(4)
+	#print(DATA)
+	
+	df = DATA.T
+	df.columns = ['ae5', 'ae6', 'et-8/2/1']
+	#df.columns = ['et-8/2/0','et-8/0/0', 'et-4/3/0']
+	#df.columns = ['et-8/0/0', 'et-4/3/0']
+	#Oldio ^
+	df.drop(['Unnamed: 0'], axis = 0, inplace=True)
+	df = DATA.drop(['Unnamed: 0'], axis = 1)
+	df ['nodes'] = ['ae5', 'ae6', 'et-8/2/1']
+	#df['nodes'] = ['et-8/0/0', 'et-4/3/0']
+	#df['nodes'] = ['et-8/2/0','et-8/0/0', 'et-4/3/0']
+	#Super old
+
+	df = pd.Series(df['0'].values,index=df.nodes).to_dict()
+	return df
 
 	'''
 	df = pd.read_csv(io.StringIO(todos))
@@ -303,25 +417,29 @@ for index, line in enumerate(hosts):
 	'''	
 	#Why commented out in RBIN? 
 
-######==extract_dict==###### only unique parts. 
-#Defines AGLT2, AGLT2CHI, RBIN and  in the for loops of the dict_maker section 
+######==extract_dict==###### only unique parts 
+#Defines AGLT2, AGLT2CHI, RBIN, & AGLT2RTR in the for loops of the dict_maker section 
+#Integrate these into their respective sections instead of having them here on their own? 
+
 def AGLT2(metadata):
 	metadata = str(metadata)
-	#outpath = "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1707/Raw/AGLT2/pp"
 	#outpath = "../Output/Raw/AGLT2"
+	#Want to change to: outpath = "../Output/Raw/AGLT2/checkmk
+	#outpath = "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1707/Raw/AGLT2/pp"
+	#Old ^
 	aglt2path = os.environ["aglt2"]
+	pppath = os.environ["pp"]
+
 	if os.path.isdir(aglt2path):
 		print("Path exists: ", aglt2path)
 	else:
 		print("Path does not exist")
 	
-	"""pppath = os.environ["pp"]
 	if os.path.isdir(pppath):
 		print("Path exists: ", pppath)
 	else:
 		print("Path does not exist")
-	Not needed because defined earlier in nv.py section 
-	"""	
+	#Defined earlier in nv.py section, might be needed here for next line? 
 	
 	csvfiles = glob.glob(os.path.join(pppath, 'AGLT2_{}_*.csv'.format(metadata)))
 	csvfiles = sorted(csvfiles)
@@ -357,6 +475,7 @@ def AGLT2(metadata):
 	dfstd = transpose(df_std)
 	#print(dfmin)
 	return dfmin, dfmax, dfmean, dfstd
+
 
 #AGLT2_CHI_0.csv 
 def AGLT2CHI(metadata):
@@ -411,7 +530,6 @@ def AGLT2CHI(metadata):
 	dfstd = transpose(df_std)
 	return dfmin, dfmax, dfmean, dfstd
 
-	
 def RBIN(metadata):
 	metadata = str(metadata)
 	#outpath = "../Output/Raw/RBIN"
@@ -452,7 +570,10 @@ def RBIN(metadata):
 def AGLT2RTR(metadata):
 	metadata = str(metadata)
 	aglt2rtrpath = os.environ["aglt2rtr"]
-	#outpath = "../Output/Raw/routes/seperate the routers into 2 dirs after this?"
+	"""outpath = "../Output/Raw/aglt2rtr/seperate the routers into 2 dirs after this?"
+	../Output/Raw/aglt2rtr
+	Better would be to just send all 4 connections to /aglt2rtr & label them all so
+	we know which of the 4 we're looking at, similar to how data's set up in Raw/AGLT2/pp"""
 	if os.path.isdir(aglt2rtrpath):
 		print("Path exists: ", aglt2rtrpath)
 	else:
@@ -471,6 +592,8 @@ def AGLT2RTR(metadata):
 	#Not sure if this'll cover all 4 connections? 
 	dfGb_in = DATA[DATA.index % 4 == 0].copy(deep=True)
 	dfGb_out = DATA[DATA.index % 4 == 1].copy(deep=True)
+	#Ask Jem what the 0 & 1 should be here & why
+
 	def transpose(dataframe):
 		df = dataframe.T
 		df.columns = ['aglt2-rtr-1', 'aglt2-rtr-2']
@@ -479,16 +602,16 @@ def AGLT2RTR(metadata):
 		df['Routers'] = ['aglt2-rtr-1', 'aglt2-rtr-2']
 		df = pd.Series(df['srv'].values,index=df.Routers).to_dict()
 		return df
-	dfmin = transpose(dfGb_in)
-	dfmax = transpose(dfGb_out)
+	dfGbin = transpose(dfGb_in)
+	dfGbout = transpose(dfGb_out)
 	return dfGb_in, dfGb_out
 
 ######==dict_maker==###### only unique parts
 aglt2 = ['CPU_load', 'CPU_utilization', 'Disk_IO_SUMMARY', 'Memory']
 aglt2chi = ['input', 'output']
 rbin = ['GBIn', 'GBOut', 'GBpsIn', 'GBpsOut', 'UtilIn', 'UtilOut']
-aglt2rtr = ['Interface Ethernet']
-#rtr = ['Gb_in', 'Gb_out']
+aglt2rtr = ['Interface_Ethernet1/51', 'Interface_Ethernet1/52']
+#rtr = ['Gb_in', 'Gb_out']?
 # ^ Making the data type from checkmk for the 4 router connections
 """Also, aglt2chi & rbin lines were commented out temporarily because I think 
 they weren't done/working properly initially"""
@@ -512,7 +635,8 @@ aglt2rtr_Gb_out = []
 #rtr_out = []
 #Just a guess ^
 #From https://um-omd.aglt2.org/atlas/check_mk/index.py?start_url=%2Fatlas%2Fcheck_mk%2Fview.py%3Fhost%3Daglt2-rtr-1%26service%3DInterface%2BEthernet1%252F51%26site%3Datlas%26view_name%3Dservice
-#Data from site in raw form is in bytes, need to convert to mb
+#Aglt2-rtr-1-1/51 link ^
+#Data from site in raw form is in bytes, need to convert to mb at some point
 
 for i in range(len(aglt2)):
 	print("====AGLT2====", aglt2[i])
@@ -540,7 +664,6 @@ for m in range (len(aglt2rtr)):
 	dfGb_in, dfGb_out = AGLT2RTR("{}".format(aglt2rtr[m]))
 	aglt2rtr.append(dfGb_in)
 	aglt2rtr.append(dfGb_out)
-
 
 """timepath = os.environ["time"]
 if os.path.isdir(timepath):
