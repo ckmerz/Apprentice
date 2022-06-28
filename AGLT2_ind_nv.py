@@ -12,7 +12,6 @@ from requests.exceptions import Timeout
 import subprocess
 from multiprocessing import Process 
 
-
 current = datetime.datetime.now()
 current_5 = current - datetime.timedelta(minutes=5)
 start = rounddos(current_5)
@@ -52,11 +51,17 @@ if os.path.isdir(aglt2path):
 else:
 	print("Path does not exist")
 	
-pppath = os.environ["pp"]
-if os.path.isdir(pppath):
+pppath = os.environ["checkmkpp"]
+#Instead do: checkmkpppath = os.environ["checkmkpp"]?  
+
+if os.path.isdir(pppath):	
 	print("Path exists: ", pppath)
 else:
 	print("Path does not exist")
+"""if os.path.isdir(checkmkpppath):
+		print("Path exists: ", checkmkpppath)
+	else:
+		print("Path does not exist")"""	
 	
 #subprocesses bash-python
 first = subprocess.Popen(['/bin/echo', str(start_final), str(end_final), str(checkmkpath)], stdout=subprocess.PIPE)

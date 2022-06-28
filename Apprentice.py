@@ -6,16 +6,17 @@ import json
 import requests
 import os
 import time
-import datetime as dt
-
 from datetime import datetime, timedelta #from extract (ext) & Timing
+import datetime as dt
+#Something about these ^ 2 lines isn't right. Add something similar to:  
+#"import datetime.xx as dtdt"? Then use "dtdt.process" instead of dt. Might fix attribute error
 import pandas as pd
 #import numpy as np. Only used once in a commented out line of Chicago section 
 from requests.exceptions import Timeout
 import subprocess 
 """Needed ^ cuz not adding the scripts this effects. 
 They're bash & don't play nice in the python env"""
-#Don't need ^, won't use these bash scripts here because they're inside IndEnv now
+#Actually don't need ^, won't use these bash scripts here because they're inside IndEnv now
 
 #from multiprocessing import Process 
 #Never used? 
@@ -33,18 +34,20 @@ import glob #ext
 def roundups(dt):
     roundup = dt + (datetime.min - dt) % timedelta(minutes=5)
     return roundup
-	#What's this for? Not used anywhere else & commenting it out doesn't change anything
+	#What's this for? Not used anywhere & commenting doesn't change anything
 """
 def rounddos(dt):
     rounddo = dt - (dt - datetime.min) % timedelta(minutes=5)
     return rounddo 
 ######==Timing.py==######
 
-current = datetime.datetime.now(dt)
+current = datetime.datetime.now()
 #def current_time(dt):
 #   current = datetime.datetime.now(dt)
 #   return current
 #current = current_time(dt)
+#Tried ^ because attribute error: has no attribute datetime 
+#1st attempt at fixing, think can fix by changing things in imports section instead of doing this 
 
 current_5 = current - datetime.timedelta(minutes=5)
 start = rounddos(current_5)
@@ -65,7 +68,7 @@ print("end orig: ", current, " ", "end rounded: ", end, " ", "end unix: ", end_f
 #default_timepath = "timething"
 #timepath = os.environ.get["time", default_timepath]
 
-#Did this way because 
+#Did this way because problem related to attribute error w/ datetime
 timepath = os.environ["time"]
 #Old version ^
 #timepath = os.environ['timepath'] = 'time'
@@ -121,6 +124,8 @@ third.wait()
 
 #save metrics to min, max, mean, std
 data = pd.read_csv(os.path.join(checkmkpath,'livestatus_pp.txt'), header=None)
+#Does the text doc name need to change? 
+
 data.columns = ['Start_Time', 'End_Time', 'Frequency','D1','D2','D3','D4','D5']
 data = data.drop(['Start_Time', 'End_Time', 'Frequency'], axis=1)
 
@@ -315,12 +320,14 @@ hosts = ['ae5', 'ae6', 'et-8/2/1']
 #hosts = ['et-4/3/0', 'et-8/0/0', 'et-8/2/0']
 #Wrong ports ^, this is the old list
 
+"""
 rbinpath = os.environ["rbin"]
 if os.path.isdir(rbinpath):
 	print("Path exists: ", rbinpath)
 else: 
 	print("Path does not exist")
 #Commented out because it's defined in extract_dict instead
+"""
 
 for index, line in enumerate(hosts):
 	print("===line===", line)
@@ -342,8 +349,8 @@ for index, line in enumerate(hosts):
 	todos = response.text
 	print(todos)
 
-#Everything below (except commented part) came from extract_dict
-#Needed for dict_maker section
+#Move here instead of having in extract_dict?
+"""
 def RBIN(metadata):
 	metadata = str(metadata)
 	#outpath = "../Output/Raw/RBIN"
@@ -380,8 +387,9 @@ def RBIN(metadata):
 
 	df = pd.Series(df['0'].values,index=df.nodes).to_dict()
 	return df
-
-	'''
+"""
+#Below commented out in original RBIN script. Why? 
+'''
 	df = pd.read_csv(io.StringIO(todos))
 	starttime = df["portmfs/Timestamp"].iloc[[0]]
 	endtime = df["portmfs/Timestamp"].iloc[[-1]]
@@ -414,8 +422,7 @@ def RBIN(metadata):
 
 	for meta in range(len(metadata)):
 		tocsv("{}".format(metadata[meta]))
-	'''	
-	#Why commented out in RBIN? 
+'''	
 
 ######==extract_dict==###### only unique parts 
 #Defines AGLT2, AGLT2CHI, RBIN, & AGLT2RTR in the for loops of the dict_maker section 
@@ -424,7 +431,7 @@ def RBIN(metadata):
 def AGLT2(metadata):
 	metadata = str(metadata)
 	#outpath = "../Output/Raw/AGLT2"
-	#Want to change to: outpath = "../Output/Raw/AGLT2/checkmk
+	#Want to change to: outpath = "../Output_2022xxxx_xxxx/Raw/AGLT2/checkmk/pp?
 	#outpath = "/NetBASILISK/IndEnv/newAGLT2/EnvironmentMonitoring/Scripts/newAGLT2/Output/Output_20220509_1707/Raw/AGLT2/pp"
 	#Old ^
 	aglt2path = os.environ["aglt2"]
@@ -574,6 +581,8 @@ def AGLT2RTR(metadata):
 	../Output/Raw/aglt2rtr
 	Better would be to just send all 4 connections to /aglt2rtr & label them all so
 	we know which of the 4 we're looking at, similar to how data's set up in Raw/AGLT2/pp"""
+	#Outpath should reflect that we added sub-dirs /AGLT2/checkmk/ & /AGLT2/aglt2rtr/!
+
 	if os.path.isdir(aglt2rtrpath):
 		print("Path exists: ", aglt2rtrpath)
 	else:
@@ -757,16 +766,27 @@ data = {
 			'UtilOut': rbin_metrics[5] 
 		},
 	},
-	"routers":{ #Figure out what #s to use here! 
-		"AGLT2-1":{
+	"routers":{ #Are the #s correct? 
+	#Add more for this 
+		"AGLT2-1-1/51":{
+			'IntEthIn': dfGb_in[0]
+			,
+			'IntEthOut': dfGb_out[0]
+		},
+		"AGLT2-1-1/52":{
 			'IntEthIn': dfGb_in[1]
 			,
 			'IntEthOut': dfGb_out[1]
 		},
-		"AGLT2-2":{
-			'IntEthIn': dfGb_in[1]
+		"AGLT2-2-1/51":{
+			'IntEthIn': dfGb_in[2]
 			,
-			'IntEthOut': dfGb_out[1]
+			'IntEthOut': dfGb_out[2]
+		},
+		"AGLT2-2-1/52":{
+			'IntEthIn': dfGb_in[3]
+			,
+			'IntEthOut': dfGb_out[3]
 		},
 	},
 }
